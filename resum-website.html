@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shanwal Singh Borana - Mobile Developer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #ffffff 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            opacity: 0.95;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        section {
+            margin-bottom: 40px;
+        }
+        
+        h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        h3 {
+            color: #764ba2;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+        
+        .summary {
+            background: #f8f9ff;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill-category {
+            background: #f8f9ff;
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+        }
+        
+        .skill-category h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .experience-item {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9ff;
+            border-radius: 10px;
+            border-left: 5px solid #764ba2;
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+        
+        .job-title {
+            font-weight: 700;
+            color: #764ba2;
+            font-size: 1.2em;
+        }
+        
+        .job-period {
+            color: #666;
+            font-style: italic;
+        }
+        
+        .responsibilities {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .responsibilities li {
+            padding-left: 25px;
+            position: relative;
+            margin-bottom: 8px;
+        }
+        
+        .responsibilities li:before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .project-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s;
+        }
+        
+        .project-card:hover {
+            border-color: #667eea;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.1);
+        }
+        
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .project-name {
+            font-weight: 700;
+            color: #667eea;
+            font-size: 1.2em;
+        }
+        
+        .tech-badge {
+            background: #667eea;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+        }
+        
+        .project-meta {
+            display: flex;
+            gap: 15px;
+            margin: 10px 0;
+            flex-wrap: wrap;
+        }
+        
+        .meta-item {
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .awards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .award-card {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .certifications {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .cert-card {
+            background: #f8f9ff;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            
+            .job-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Shanwal Singh Borana</h1>
+            <div class="subtitle">Project Lead | Tech Lead | Mobile Developer</div>
+            <div class="subtitle">Google Flutter | Android | React Native | iOS</div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <span>shanwal2009@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <span>📱</span>
+                    <span>+91-77425-26633</span>
+                </div>
+                <div class="contact-item">
+                    <span>📍</span>
+                    <span>Jaipur, India</span>
+                </div>
+            </div>
+        </header>
+        
+        <div class="content">
+            <section>
+                <h2>Professional Summary</h2>
+                <div class="summary">
+                    <p>Accomplished Mobile Application Developer with <strong>12 years of experience</strong> delivering innovative solutions across native and cross-platform technologies. Proven track record of shipping <strong>50+ applications</strong> to the Play Store & App Store.</p>
+                    <ul class="responsibilities">
+                        <li>10 years expertise in Native Android development</li>
+                        <li>2 years experience in Native iOS development</li>
+                        <li>5 years specializing in Hybrid applications using Flutter and React Native</li>
+                        <li>Expert in Software Development Life Cycle (SDLC) and Agile methodologies</li>
+                        <li>Experienced Team Lead with proven ability to inspire and guide technical teams</li>
+                        <li>International experience with on-site visits to domestic and international locations</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section>
+                <h2>Core Competencies</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Frameworks & Languages</h4>
+                        <p>Android • Flutter • Dart • Java • Kotlin • Flutter Web • React Native • Jetpack Composer</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Development Tools</h4>
+                        <p>Android Studio • VS Code • Intellij IDEA • Xcode • Eclipse • Git • Figma</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Project Management</h4>
+                        <p>Jira • Open Project • Sprint Planning • Daily Standups • Code Reviews • Backlog Grooming</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Testing & APIs</h4>
+                        <p>Jmeter • Postman • Firebase • XML • REST APIs • Performance Optimization</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Leadership Skills</h4>
+                        <p>Team Management • Mentoring • Interviewing • Training • 1-on-1s • Tech Discussions</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Architecture</h4>
+                        <p>Solution Architecture • System Design • Technical Documentation • Best Practices</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section>
+                <h2>Professional Experience</h2>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Project Lead</div>
+                            <div>SoftServ Solutions Pvt Ltd</div>
+                        </div>
+                        <div class="job-period">July 2024 – Present</div>
+                    </div>
+                    <ul class="responsibilities">
+                        <li>Define project scope, objectives, and deliverables in collaboration with stakeholders</li>
+                        <li>Create and manage detailed project plans, timelines, and milestones</li>
+                        <li>Monitor project progress, addressing risks and bottlenecks proactively</li>
+                        <li>Ensure projects are delivered on time, within scope, and budget</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Team Lead</div>
+                            <div>SoftServ Solutions Pvt Ltd</div>
+                        </div>
+                        <div class="job-period">May 2022 – July 2024</div>
+                    </div>
+                    <ul class="responsibilities">
+                        <li>Guide and mentor team members to enhance technical and professional skills</li>
+                        <li>Assign tasks based on team members' strengths and project requirements</li>
+                        <li>Address and resolve team conflicts or challenges effectively</li>
+                        <li>Conduct performance reviews and career development discussions</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Independent Consultant</div>
+                        </div>
+                        <div class="job-period">March 2021 – April 2022</div>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Senior Developer</div>
+                            <div>WoodenStreet</div>
+                        </div>
+                        <div class="job-period">Oct 2015 – Feb 2021</div>
+                    </div>
+                    <ul class="responsibilities">
+                        <li>Write clean, maintainable, and efficient code for mobile applications</li>
+                        <li>Lead the development of complex and critical application features</li>
+                        <li>Debug and resolve technical issues quickly and effectively</li>
+                        <li>Optimize app performance, ensuring smooth and efficient operation</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Senior Developer</div>
+                            <div>Netleon Technology</div>
+                        </div>
+                        <div class="job-period">Sept 2014 – Oct 2015</div>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Android Developer</div>
+                            <div>Mart Ind Info Tech</div>
+                        </div>
+                        <div class="job-period">March 2014 – Aug 2014</div>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Junior Developer</div>
+                            <div>AppsPundit</div>
+                        </div>
+                        <div class="job-period">July 2012 – Dec 2012</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section>
+                <h2>Featured Projects</h2>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-name">Marvin - G42 Technology</div>
+                        <span class="tech-badge">Flutter</span>
+                    </div>
+                    <div class="project-meta">
+                        <span class="meta-item"><strong>Platform:</strong> iOS & Android</span>
+                        <span class="meta-item"><strong>Company:</strong> G42, Abu Dhabi</span>
+                    </div>
+                    <p>An extension of the Marvin platform enhancing collaboration and communication across organizations. Designed for private network use, keeping teams connected, informed, and empowered.</p>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-name">SPS Nexus</div>
+                        <span class="tech-badge">Flutter</span>
+                    </div>
+                    <div class="project-meta">
+                        <span class="meta-item"><strong>Platform:</strong> iOS & Android</span>
+                        <span class="meta-item"><strong>Company:</strong> SPS, Switzerland</span>
+                    </div>
+                    <p>All-in-one mobile platform for seamless workplace support. Create, manage, and track service requests from mail and shipping to facility needs and space booking, streamlining operations and enhancing productivity.</p>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-name">Intrac</div>
+                        <span class="tech-badge">Flutter</span>
+                    </div>
+                    <div class="project-meta">
+                        <span class="meta-item"><strong>Platform:</strong> iOS & Android</span>
+                        <span class="meta-item"><strong>Company:</strong> InUnison Technologies, Canada</span>
+                    </div>
+                    <p>Health and safety tracking app with Event, Task, and Corrective Action modules supporting HSE operations for partner organizations.</p>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-name">Assist</div>
+                        <span class="tech-badge">Flutter</span>
+                    </div>
+                    <div class="project-meta">
+                        <span class="meta-item"><strong>Platform:</strong> iOS & Android</span>
+                        <span class="meta-item"><strong>Company:</strong> 247 Roadside Services, Australia</span>
+                    </div>
+                    <p>Fast, reliable roadside assistance for flat tires, jump-starts, tows, and more. Request service, track in real-time, and stay informed 24/7.</p>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-name">Snapfingr</div>
+                        <span class="tech-badge">Flutter</span>
+                    </div>
+                    <div class="project-meta">
+                        <span class="meta-item"><strong>Platform:</strong> iOS & Android</span>
+                        <span class="meta-item"><strong>Company:</strong> SoftServ Solution Pvt Ltd., India</span>
+                    </div>
+                    <p>Instantly create and print sales receipts anywhere. Streamline sales with product lists, customer details, and customizable formats stored locally for privacy.</p>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-name">Fevicrate</div>
+                        <span class="tech-badge">Flutter</span>
+                    </div>
+                    <div class="project-meta">
+                        <span class="meta-item"><strong>Platform:</strong> iOS & Android</span>
+                        <span class="meta-item"><strong>Company:</strong> Pidilite Industries Limited, India</span>
+                    </div>
+                    <p>Fun learning platform using art and craft to make education engaging. Personalized journeys for kids, parents, teachers, and schools aligned with NEP 2020.</p>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-name">Anchor Emitra</div>
+                        <span class="tech-badge">Flutter</span>
+                    </div>
+                    <div class="project-meta">
+                        <span class="meta-item"><strong>Platform:</strong> iOS & Android</span>
+                        <span class="meta-item"><strong>Company:</strong> Panasonic Life Solutions India Pvt. Ltd.</span>
+                    </div>
+                    <p>Streamline dealer operations with personalized views, order and invoice handling, payments, account management, FAQs, and detailed reports.</p>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-name">B.E.S.T</div>
+                        <span class="tech-badge">Flutter</span>
+                    </div>
+                    <div class="project-meta">
+                        <span class="meta-item"><strong>Platform:</strong> iOS & Android</span>
+                        <span class="meta-item"><strong>Company:</strong> Panasonic Life Solutions India Pvt. Ltd.</span>
+                    </div>
+                    <p>Track attendance, customer visits, and beat routes. Book orders with payment status and monitor sales performance with real-time dashboards.</p>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-name">Woodenstreet</div>
+                        <span class="tech-badge">Flutter</span>
+                    </div>
+                    <div class="project-meta">
+                        <span class="meta-item"><strong>Platform:</strong> iOS & Android</span>
+                        <span class="meta-item"><strong>Company:</strong> Woodenstreet, India</span>
+                    </div>
+                    <p>Shop 5000+ custom furniture and décor designs. Explore collections, wishlist features, secure payments, and 24/7 support from India's trusted furniture brand.</p>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-name">MySIPonline</div>
+                        <span class="tech-badge">Flutter</span>
+                    </div>
+                    <div class="project-meta">
+                        <span class="meta-item"><strong>Platform:</strong> iOS & Android</span>
+                        <span class="meta-item"><strong>Company:</strong> MySIPonline, India</span>
+                    </div>
+                    <p>Invest in top mutual funds and SIPs hassle-free with expert guidance. Simple, secure, and paperless investing trusted by thousands across India.</p>
+                </div>
+            </section>
+            
+            <section>
+                <h2>Honors & Awards</h2>
+                <div class="awards">
+                    <div class="award-card">
+                        <div>🌟 Rising Star</div>
+                        <div>SoftServ Solutions - Oct 2022</div>
+                    </div>
+                    <div class="award-card">
+                        <div>⭐ Golden Star Performance</div>
+                        <div>WoodenStreet - July 2018</div>
+                    </div>
+                    <div class="award-card">
+                        <div>🏆 Employee of the Month</div>
+                        <div>WoodenStreet - March 2016</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section>
+                <h2>Certifications</h2>
+                <div class="certifications">
+                    <div class="cert-card">
+                        <strong>Core Java - Foundation</strong><br>
+                        <span style="color: #666;">2011</span>
+                    </div>
+                    <div class="cert-card">
+                        <strong>Android App Development</strong><br>
+                        <span style="color: #666;">July 2012</span>
+                    </div>
+                    <div class="cert-card">
+                        <strong>Advanced Mobile App Development</strong><br>
+                        <span style="color: #666;">August 2013</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
